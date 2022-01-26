@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_nav"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.navigationview.ui.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.navigationview.ui.notification.NotificationFragment"
+        android:label="notification_fragment"
+        tools:layout="@layout/notification_fragment" />
+    <fragment
+        android:id="@+id/collectionFragment"
+        android:name="com.example.navigationview.ui.collection.CollectionFragment"
+        android:label="collection_fragment"
+        tools:layout="@layout/collection_fragment" />
+    <fragment
+        android:id="@+id/inboxFragment"
+        android:name="com.example.navigationview.ui.inbox.InboxFragment"
+        android:label="inbox_fragment"
+        tools:layout="@layout/inbox_fragment" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.navigationview.ui.orders.OrdersFragment"
+        android:label="orders_fragment"
+        tools:layout="@layout/orders_fragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.navigationview.ui.settings.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="com.example.navigationview.ui.support.SupportFragment"
+        android:label="support_fragment"
+        tools:layout="@layout/support_fragment" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.navigationview.ui.aboutus.AboutUsFragment"
+        android:label="about_us_fragment"
+        tools:layout="@layout/about_us_fragment" />
+</navigation>
