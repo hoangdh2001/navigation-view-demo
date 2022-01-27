@@ -1,7 +1,12 @@
 package com.example.navigationview.ui.aboutus
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class AboutUsViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    private val _text = MutableLiveData<String>().apply {
+        value = "About Us"
+    }
+    val text: LiveData<String> = _text
 }

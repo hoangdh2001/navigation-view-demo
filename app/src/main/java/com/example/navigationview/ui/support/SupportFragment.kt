@@ -6,27 +6,35 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.navigationview.R
+import com.example.navigationview.databinding.SupportFragmentBinding
 
 class SupportFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SupportFragment()
-    }
-
     private lateinit var viewModel: SupportViewModel
+    private var _binding: SupportFragmentBinding? = null
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.support_fragment, container, false)
+        viewModel = ViewModelProvider(this).get(SupportViewModel::class.java)
+        _binding = SupportFragmentBinding.inflate(inflater, container, false)
+        val root = binding.root
+
+        val textView: TextView = binding.textSupport
+        viewModel.text.observe(viewLifecycleOwner, {
+            textView.text = it
+        })
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SupportViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

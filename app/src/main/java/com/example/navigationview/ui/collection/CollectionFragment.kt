@@ -7,26 +7,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.navigationview.R
+import com.example.navigationview.databinding.CollectionFragmentBinding
 
 class CollectionFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = CollectionFragment()
-    }
-
     private lateinit var viewModel: CollectionViewModel
+    private var _binding: CollectionFragmentBinding? = null
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.collection_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CollectionViewModel::class.java)
-        // TODO: Use the ViewModel
+       _binding = CollectionFragmentBinding.inflate(inflater, container, false)
+       val root = binding.root
+
+        val textView = binding.textCollection
+        viewModel.text.observe(viewLifecycleOwner, {
+            textView.text = it
+        })
+        return root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

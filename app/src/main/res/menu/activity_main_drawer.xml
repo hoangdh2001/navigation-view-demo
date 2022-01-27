@@ -20,15 +20,19 @@
             android:id="@+id/nav_orders"
             android:title="@string/orders"/>
         <item
-            android:id="@+id/nav_settings"
-            android:title="@string/settings"/>
-        <item
-            android:id="@+id/nav_support"
-            android:title="@string/support"/>
+            android:title="@string/orders">
+            <menu>
+                <item
+                    android:id="@+id/nav_settings"
+                    android:title="@string/settings"/>
+                <item
+                    android:id="@+id/nav_support"
+                    android:title="@string/support"/>
 
-        <item
-            android:id="@+id/nav_about_us"
-            android:title="@string/about_us"/>
+                <item
+                    android:id="@+id/nav_about_us"
+                    android:title="@string/about_us"/>
+            </menu>
+        </item>
     </group>
-
 </menu>

@@ -3,46 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_nav"
-    app:startDestination="@id/profileFragment">
+    app:startDestination="@id/nav_profile">
 
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/nav_profile"
         android:name="com.example.navigationview.ui.profile.ProfileFragment"
-        android:label="profile_fragment"
+        android:label="@string/profile"
         tools:layout="@layout/profile_fragment" />
     <fragment
-        android:id="@+id/notificationFragment"
+        android:id="@+id/nav_notification"
         android:name="com.example.navigationview.ui.notification.NotificationFragment"
-        android:label="notification_fragment"
+        android:label="@string/notification"
         tools:layout="@layout/notification_fragment" />
     <fragment
-        android:id="@+id/collectionFragment"
+        android:id="@+id/nav_collection"
         android:name="com.example.navigationview.ui.collection.CollectionFragment"
-        android:label="collection_fragment"
+        android:label="@string/collection"
         tools:layout="@layout/collection_fragment" />
     <fragment
-        android:id="@+id/inboxFragment"
+        android:id="@+id/nav_inbox"
         android:name="com.example.navigationview.ui.inbox.InboxFragment"
-        android:label="inbox_fragment"
+        android:label="@string/inbox"
         tools:layout="@layout/inbox_fragment" />
     <fragment
-        android:id="@+id/ordersFragment"
+        android:id="@+id/nav_orders"
         android:name="com.example.navigationview.ui.orders.OrdersFragment"
-        android:label="orders_fragment"
+        android:label="@string/orders"
         tools:layout="@layout/orders_fragment" />
     <fragment
-        android:id="@+id/settingsFragment"
+        android:id="@+id/nav_settings"
         android:name="com.example.navigationview.ui.settings.SettingsFragment"
-        android:label="settings_fragment"
+        android:label="@string/settings"
         tools:layout="@layout/settings_fragment" />
     <fragment
-        android:id="@+id/supportFragment"
+        android:id="@+id/nav_support"
         android:name="com.example.navigationview.ui.support.SupportFragment"
-        android:label="support_fragment"
+        android:label="@string/support"
         tools:layout="@layout/support_fragment" />
     <fragment
-        android:id="@+id/aboutUsFragment"
+        android:id="@+id/nav_about_us"
         android:name="com.example.navigationview.ui.aboutus.AboutUsFragment"
-        android:label="about_us_fragment"
+        android:label="@string/about_us"
         tools:layout="@layout/about_us_fragment" />
 </navigation>

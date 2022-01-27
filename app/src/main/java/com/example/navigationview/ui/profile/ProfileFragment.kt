@@ -6,27 +6,35 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 import com.example.navigationview.R
+import com.example.navigationview.databinding.ProfileFragmentBinding
 
 class ProfileFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ProfileFragment()
-    }
-
     private lateinit var viewModel: ProfileViewModel
+    private var _binding: ProfileFragmentBinding? = null
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.profile_fragment, container, false)
+        viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+        _binding = ProfileFragmentBinding.inflate(inflater, container, false)
+        val root = binding.root
+        val textView: TextView = binding.textProfile
+        viewModel.text.observe(viewLifecycleOwner, {
+            textView.text = it
+        })
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

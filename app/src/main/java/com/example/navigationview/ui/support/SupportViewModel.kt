@@ -1,7 +1,12 @@
 package com.example.navigationview.ui.support
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class SupportViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    private val _text = MutableLiveData<String>().apply {
+        value = "Support"
+    }
+    val text: LiveData<String> = _text
 }
